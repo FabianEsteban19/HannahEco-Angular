@@ -1,63 +1,270 @@
-/* Estilos personalizados para la página de inicio */
+/* Animaciones personalizadas para el menú móvil */
 
-.hero-background {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
-.feature-card {
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-}
-
-.gradient-text {
-    background: linear-gradient(135deg, #10b981, #059669);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
+/* Animación de fade in básica */
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* Responsive design mejorado */
-@media (max-width: 640px) {
-    .hero-title {
-        font-size: 2.5rem;
+/* Animación de deslizamiento desde la derecha */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
     }
 
-    .hero-subtitle {
-        font-size: 1.125rem;
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
-/* Efectos hover para botones */
-.btn-primary {
-    transition: all 0.3s ease;
+/* Animación de rebote suave */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3) translateX(100%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05) translateX(-5%);
+    }
+
+    70% {
+        transform: scale(0.9) translateX(2%);
+    }
+
+    100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+/* Animación suave para el backdrop */
+@keyframes backdropFadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
 }
 
-.btn-secondary:hover {
+/* Clases de animación */
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Animaciones con delay para efecto escalonado */
+.animate-fade-in-delay-1 {
+    animation: fadeIn 0.4s ease-out 0.1s both;
+}
+
+.animate-fade-in-delay-2 {
+    animation: fadeIn 0.4s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-3 {
+    animation: fadeIn 0.4s ease-out 0.3s both;
+}
+
+.animate-fade-in-delay-4 {
+    animation: fadeIn 0.4s ease-out 0.4s both;
+}
+
+.animate-fade-in-delay-5 {
+    animation: fadeIn 0.4s ease-out 0.5s both;
+}
+
+/* Estilos mejorados para el botón hamburguesa */
+.hamburger-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hamburger-line-1,
+.hamburger-line-2,
+.hamburger-line-3 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* Animación del botón hamburguesa cuando está abierto */
+dialog[open]~nav .hamburger-icon {
+    transform: rotate(180deg);
+}
+
+/* Estados del ícono hamburguesa transformado */
+.hamburger-active .hamburger-line-1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-active .hamburger-line-2 {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.hamburger-active .hamburger-line-3 {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Efectos hover mejorados para los enlaces del menú */
+.menu-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.menu-link:hover::before {
+    left: 100%;
+}
+
+/* Efectos adicionales para el backdrop */
+dialog::backdrop {
+    animation: backdropFadeIn 0.3s ease-out;
+}
+
+/* Panel del menú con efectos glassmorphism */
+.menu-panel {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Animaciones de micro-interacciones */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de ondas al hacer click */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(79, 70, 229, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+/* Respuesta táctil para dispositivos móviles */
+@media (hover: none) {
+    .hover-lift:active {
+        transform: scale(0.98);
+    }
+
+    .menu-link:active {
+        background-color: rgba(79, 70, 229, 0.1);
+        transform: scale(0.98);
+    }
+}
+
+/* Animación de pulso para el botón de cerrar */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-pulse-hover:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Mejoras de accesibilidad - reducir animaciones si está configurado */
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-fade-in,
+    .animate-slide-in-right,
+    .animate-bounce-in,
+    .animate-fade-in-delay-1,
+    .animate-fade-in-delay-2,
+    .animate-fade-in-delay-3,
+    .animate-fade-in-delay-4,
+    .animate-fade-in-delay-5 {
+        animation: none;
+    }
+
+    .hamburger-line-1,
+    .hamburger-line-2,
+    .hamburger-line-3,
+    .hamburger-icon {
+        transition: none;
+    }
+
+    .hover-lift {
+        transition: none;
+    }
+}
+
+/* Estilos para el loading state */
+.menu-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Efecto de enfoque mejorado para accesibilidad */
+.focus-visible:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+    border-radius: 6px;
 }

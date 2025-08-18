@@ -1,86 +1,114 @@
-<!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
-<div class="bg-white min-h-screen relative">
-  <!-- Header -->
-  <header class="absolute inset-x-0 top-0 z-50">
-    <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
-      <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="text-2xl font-semibold text-gray-900">Hannah Ecosistema</span>
-        </a>
-      </div>
-      <div class="flex lg:hidden">
-        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Open main menu</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
-            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm font-semibold text-gray-900">Aplicaciones</a>
-        <a href="#" class="text-sm font-semibold text-gray-900">Nosotros</a>
-        <a href="#" class="text-sm font-semibold text-gray-900">Tienda</a>
-        <a href="#" class="text-sm font-semibold text-gray-900">Compañía</a>
-      </div>
-    
-    </nav>
-
-    <!-- Mobile menu -->
-    <el-dialog>
-      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-        <div tabindex="0" class="fixed inset-0 focus:outline-none">
-          <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="text-2xl font-semibold text-gray-900">Hannah Ecosistema</span>
-              </a>
-              <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
-                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+<div class="bg-dark dark:bg-gray-900 min-h-screen relative">
+    <!-- Header -->
+    <header class="absolute inset-x-0 top-0 z-50">
+        <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="text-2xl font-semibold tracking-wider text-white">Hannah Ecosistema</span>
+                </a>
             </div>
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Productos</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Nosotros</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Tienda</a>
-                  <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50">Compañía</a>
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-200 transition-all duration-300 hover:bg-white/10 hover:scale-110 focus-visible:outline-2 focus-visible:outline-indigo-500 ripple-effect">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
+                        class="hamburger-icon size-6 transition-transform duration-300">
+                        <path class="hamburger-line-1 transition-all duration-300 origin-center" d="M3.75 6.75h16.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="hamburger-line-2 transition-all duration-300" d="M3.75 12h16.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="hamburger-line-3 transition-all duration-300 origin-center" d="M3.75 17.25h16.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-5">
+                <a routerLink="/home"
+                    class="text-sm tracking-wider font-semibold text-white hover:text-indigo-200">Inicio</a>
+                <a routerLink="/aplicaciones"
+                    class="text-sm tracking-wide font-semibold text text-white hover:text-indigo-200">Aplicaciones</a>
+                <a routerLink="/nosotros"
+                    class="text-sm tracking-wide font-semibold text text-white hover:text-indigo-200">Nosotros</a>
+                <a routerLink="/tienda"
+                    class="text-sm tracking-wide font-semibold text text-white hover:text-indigo-200">Tienda</a>
+                <a routerLink="/compania"
+                    class="text-sm tracking-wide font-semibold text text-white hover:text-indigo-200">Compañía</a>
+            </div>
+
+        </nav>
+
+        <!-- Mobile menu -->
+        <el-dialog>
+
+            <dialog id="mobile-menu"
+                class="backdrop:bg-black/20 backdrop:backdrop-blur-xs backdrop:transition-all backdrop:duration-300 lg:hidden">
+
+                <div tabindex="0" class="fixed inset-0 bg-black/20 backdrop-blur-xs focus:outline-none animate-fade-in">
+                    <el-dialog-panel
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900/80 backdrop-blur-xl border-l border-white/10 p-6 sm:max-w-sm transform transition-all duration-500 ease-out animate-slide-in-right shadow-2xl">
+                        <div class="flex items-center justify-between animate-fade-in-delay-1">
+                            <a routerLink="/home" class="-m-1.5 p-1.5">
+                                <span class="text-2xl font-semibold tracking-wider text-white">Hannah Ecosistema</span>
+                            </a>
+                            <button type="button" command="close" commandfor="mobile-menu"
+                                class="-m-2.5 rounded-md p-2.5 text-gray-200 transition-all duration-300 hover:bg-white/10 hover:scale-110 hover:rotate-90 focus-visible:outline-2 focus-visible:outline-indigo-500 animate-pulse-hover">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true"
+                                    class="size-6 transition-transform duration-300">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-white/10">
+                                <div class="space-y-2 py-6">
+                                    <a routerLink="/aplicaciones"
+                                        class="menu-link -mx-3 block rounded-lg px-3 py-2 tracking-wide text-base/7 font-semibold text-white hover:text-indigo-400 hover:bg-white/10 transition-all duration-300 animate-fade-in-delay-2 hover:scale-105 hover:translate-x-2 focus-visible:outline-2 focus-visible:outline-indigo-500 ripple-effect">Aplicaciones</a>
+                                    <a routerLink="/nosotros"
+                                        class="menu-link -mx-3 block rounded-lg px-3 py-2 tracking-wide text-base/7 font-semibold text-white hover:text-indigo-400 hover:bg-white/10 transition-all duration-300 animate-fade-in-delay-3 hover:scale-105 hover:translate-x-2 focus-visible:outline-2 focus-visible:outline-indigo-500 ripple-effect">Nosotros</a>
+                                    <a routerLink="/tienda"
+                                        class="menu-link -mx-3 block rounded-lg px-3 py-2 tracking-wide text-base/7 font-semibold text-white hover:text-indigo-400 hover:bg-white/10 transition-all duration-300 animate-fade-in-delay-4 hover:scale-105 hover:translate-x-2 focus-visible:outline-2 focus-visible:outline-indigo-500 ripple-effect">Tienda</a>
+                                    <a routerLink="/compania"
+                                        class="menu-link -mx-3 block rounded-lg px-3 py-2 tracking-wide text-base/7 font-semibold text-white hover:text-indigo-400 hover:bg-white/10 transition-all duration-300 animate-fade-in-delay-5 hover:scale-105 hover:translate-x-2 focus-visible:outline-2 focus-visible:outline-indigo-500 ripple-effect">Compañía</a>
+                                </div>
+                            </div>
+                        </div>
+                    </el-dialog-panel>
                 </div>
-               
-              </div>
+            </dialog>
+        </el-dialog>
+    </header>
+
+    <!-- Hero section -->
+    <div class="relative isolate px-6 pt-14 lg:px-8 min-h-screen">
+        <!-- Fondo suavizado -->
+        <div aria-hidden="true" class="absolute inset-0 -z-10 overflow-hidden">
+            <div
+                class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#7B61FF] via-[#00E0FF] to-[#FF4FF8] opacity-15 blur-3xl">
             </div>
-          </el-dialog-panel>
+            <div
+                class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#00E0FF] via-[#7B61FF] to-[#FF4FF8] opacity-10 blur-3xl">
+            </div>
+            <div
+                class="absolute top-[40%] left-[50%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#FF4FF8] via-[#7B61FF] to-[#00E0FF] opacity-10 blur-3xl">
+            </div>
         </div>
-      </dialog>
-    </el-dialog>
-  </header>
 
-  <!-- Hero section -->
-  <div class="relative isolate px-6 pt-14 lg:px-8 min-h-screen">
-    <!-- Fondo suavizado -->
-    <div aria-hidden="true" class="absolute inset-0 -z-10 overflow-hidden">
-      <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#7B61FF] via-[#00E0FF] to-[#FF4FF8] opacity-15 blur-3xl"></div>
-      <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#00E0FF] via-[#7B61FF] to-[#FF4FF8] opacity-10 blur-3xl"></div>
-      <div class="absolute top-[40%] left-[50%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#FF4FF8] via-[#7B61FF] to-[#00E0FF] opacity-10 blur-3xl"></div>
-    </div>
-
-    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div class="text-center ">
-        <h1 class="text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl">Aquellos que buscan un futuro sostenible</h1>
-        <p class="mt-8 text-lg font-medium text-gray-600 sm:text-xl">
-          Con Hannah Ecosistema te ayudaremos optimizar procesos y tomar mejores decisiones de forma sencilla.
-        </p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-500 transition">
-            Comenzar
-          </a>
-          <a href="#" class="text-sm font-semibold text-gray-900 hover:text-indigo-600">Aprender más <span aria-hidden="true">→</span></a>
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div class="text-center ">
+                <h1 class="text-5xl font-bold tracking-tight text-white sm:text-7xl">Aquellos que buscan un futuro
+                    sostenible</h1>
+                <p class="mt-8 text-lg font-medium text-white sm:text-xl">
+                    Con Hannah Ecosistema te ayudaremos optimizar procesos y tomar mejores decisiones de forma sencilla.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a routerLink="/aplicaciones"
+                        class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-indigo-500 transition">
+                        Comenzar
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

@@ -1,0 +1,242 @@
+/* Clases CSS Responsive Compartidas para Hannah Ecosistema */
+
+/* Mobile Menu Toggle */
+.mobile-menu-hidden {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .mobile-menu-hidden {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+}
+
+/* Hero Sections Responsive */
+.hero-responsive {
+    padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+    .hero-responsive {
+        padding: 4rem 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-responsive {
+        padding: 5rem 2rem;
+    }
+}
+
+/* Typography Responsive */
+.title-responsive {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+@media (min-width: 640px) {
+    .title-responsive {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .title-responsive {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title-responsive {
+        font-size: 3.75rem;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 1280px) {
+    .title-responsive {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+}
+
+.subtitle-responsive {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .subtitle-responsive {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .subtitle-responsive {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}
+
+/* Card Grid Responsive */
+.grid-responsive-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .grid-responsive-1 {
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-responsive-1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-responsive-1 {
+        gap: 2.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid-responsive-1 {
+        gap: 3rem;
+    }
+}
+
+.grid-responsive-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .grid-responsive-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-responsive-2 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid-responsive-2 {
+        gap: 3rem;
+    }
+}
+
+/* Spacing Responsive */
+.section-padding-responsive {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+    .section-padding-responsive {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-padding-responsive {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* Button Responsive */
+.btn-responsive {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+    .btn-responsive {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .btn-responsive {
+        padding: 0.875rem 2rem;
+        font-size: 1.125rem;
+    }
+}
+
+/* Container Responsive */
+.container-responsive {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container-responsive {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-responsive {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-responsive {
+        max-width: 1024px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container-responsive {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container-responsive {
+        max-width: 1536px;
+    }
+}
+
+/* Animation Responsive */
+@media (max-width: 767px) {
+    .no-animation-mobile {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* Touch friendly sizing */
+@media (max-width: 1023px) {
+    .touch-friendly {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}

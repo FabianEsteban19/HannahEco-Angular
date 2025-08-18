@@ -1,0 +1,135 @@
+/* Estilos para la página de Nosotros - Tema oscuro */
+
+.hero-section {
+    background: linear-gradient(135deg, #7B61FF 0%, #00E0FF 50%, #FF4FF8 100%);
+}
+
+.mission-card,
+.vision-card,
+.team-card {
+    transition: all 0.3s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover,
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.team-member-card {
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: scale(1.05);
+}
+
+.value-icon {
+    transition: transform 0.3s ease;
+}
+
+.value-icon:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+}
+
+.team-card {
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+}
+
+.value-card {
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: scale(1.05);
+}
+
+.mission-vision-card {
+    transition: all 0.3s ease;
+}
+
+.mission-vision-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-avatar {
+    font-size: 4rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.social-link {
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}

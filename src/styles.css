@@ -10,24 +10,3 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-.background-container {
-    position: absolute;
-    inset-x: 0;
-    top: -10rem;
-    z-index: -10;
-    transform: -gpu;
-    overflow: hidden;
-    filter: blur(100px);
-    /* Aumentamos el desenfoque para un efecto más suave */
-}
-
-.background-shape {
-    position: relative;
-    left: calc(50% - 11rem);
-    width: 144.5rem;
-    aspect-ratio: 1155/678;
-    transform: translateX(-50%) rotate(30deg);
-    background: linear-gradient(to top right, #8A2BE2, #48D1CC, #FF69B4);
-    opacity: 0.3;
-}
